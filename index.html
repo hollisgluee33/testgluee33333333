@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Benji Luxe — The Maltese</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #fff5f7, #f0f9ff);
+      color: #333;
+    }
+    header {
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff66b2;
+    }
+    nav a {
+      margin: 0 0.75rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      position: relative;
+      cursor: pointer;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 0;
+      background: #ff66b2;
+      transition: 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .feed {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: fadeIn 0.8s ease forwards;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card h2 {
+      font-size: 1.3rem;
+      padding: 1rem;
+      color: #ff66b2;
+    }
+    .card p {
+      padding: 0 1rem 1rem;
+      line-height: 1.5;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      margin-top: 2rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Page hide/show */
+    section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🐾 Benji Luxe</div>
+    <nav>
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('about')">About Benji</a>
+      <a onclick="showPage('gallery')">Gallery</a>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="active">
+    <main class="feed">
+      <article class="card">
+        <img src="https://placekitten.com/400/300" alt="Benji the Maltese">
+        <h2>Benji — Italian Luxury</h2>
+        <p>Benji is a white, small, nonchalant, and performative Maltese. Born in Italy, he exudes calm confidence and poise. His taste in music is exquisite, loving 2 Hollis, Benson Boone, and Sombur.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://placekitten.com/401/300" alt="Benji and Logi">
+        <h2>Benji & Logi</h2>
+        <p>Benji’s boyfriend, Logi, shares in his luxurious lifestyle. Together, they embody elegance, often lounging in sunlit courtyards.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://placekitten.com/402/300" alt="Music Preferences">
+        <h2>Musical Indulgence</h2>
+        <p>When relaxing, Benji enjoys music sessions featuring 2 Hollis, Benson Boone, and Sombur. His playlists are curated to perfection.</p>
+      </article>
+    </main>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <main class="feed">
+      <article class="card">
+        <img src="https://placekitten.com/403/300" alt="Stylish Benji">
+        <h2>Who is Benji?</h2>
+        <p>Benji is the epitome of canine sophistication. A Maltese born in Italy, he carries an air of nonchalant elegance. His days are filled with music, sunbathing, and fine dining.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://placekitten.com/404/300" alt="Benji Dislikes">
+        <h2>His Dislikes</h2>
+        <p>Benji famously disapproves of Niamh’s music taste — Metallica and Led Zeppelin are a big no for this refined pup.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://placekitten.com/405/300" alt="Benji Life">
+        <h2>Daily Life</h2>
+        <p>From morning walks to evening cuddles, Benji's routine is tailored for ultimate comfort and joy.</p>
+      </article>
+    </main>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <main class="feed">
+      <article class="card">
+        <img src="https://placekitten.com/406/300" alt="Benji in the Park">
+        <h2>Park Day</h2>
+        <p>Benji enjoying a sunny afternoon with Logi.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://placekitten.com/407/300" alt="Benji Posing">
+        <h2>Strike a Pose</h2>
+        <p>Capturing Benji's elegance in every shot.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://placekitten.com/408/300" alt="Benji Relaxing">
+        <h2>Relaxation Time</h2>
+        <p>Lounging in the softest bed imaginable.</p>
+      </article>
+    </main>
+  </section>
+
+  <footer>
+    <p>© 2025 Benji Luxe | Designed with 🐾</p>
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
